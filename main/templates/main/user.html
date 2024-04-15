@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <title>User</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="dt">
+                <img src="{% static 'images/date and time.png' %}" alt="date and time">
+                <br>
+                <p><span id="time"> </span> <br> <span id="date"> </span></p>
+            </div>
+            <div class="temp">
+                <img src="{% static 'images/temperature.png' %}" alt="temperature">
+                <br>
+                <p>Temperature:{{temperature}}</p>
+            </div>
+            <div class="humi">
+                <img src="{% static 'images/humidity.png' %}" alt="humidity">
+                <br>
+                <p>HUMIDITY:{{humidity}}</p>
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/profile.png' %}" alt="profile">
+                <p>ID: AZ1987DSR <br> Installation date: 29/04/2022 <br> Next Maintenance: 23/05/2023</p>
+            </div>
+            <div class="image">
+                <p>Username:{{username}}</p>
+            </div>
+        </div>
+    </header>
+
+    <br>
+    <main>
+
+        <div class="sections">
+            <div class="control block">
+                <p>Control the structure Opening and Closing just from here. </p>
+                <a href="{% url 'control'  %}"><button>CHANGE</button></a>
+            </div>
+            <div class="crop block">
+                <p>Know the current crop conditions that you have planted !</p>
+                <a href="{% url 'crop'  %}"><button onclick="window.location.href='crop.html';">CHECK</button></a>
+            </div>
+            <div class="prediction block">
+                <p> Know which crop to Plant based on the Surrounding Temperature, Humidity And other similar factors.
+                </p>
+                <a href="{% url 'predict'  %}"><button>PREDICT</button></a>
+            </div>
+        </div>
+    </main>
+
+
+    <br><br><br>
+    <footer>
+        <marquee behavior="scroll" direction="left">
+            Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR -
+            Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR -
+            Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR - Polyhouse ID: AZ1987DSR
+        </marquee>
+    </footer>
+
+
+    <script src="{% static 'js/time.js' %}"></script>
+</body>
+
+</html>

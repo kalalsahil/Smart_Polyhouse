@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/predict.css' %}">
+    <title>Predict Crops</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="dt">
+                <img src="{% static 'images/date and time.png' %}" alt="date and time">
+                <br>
+                <p><span id="time"> </span> <br> <span id="date"> </span></p>
+            </div>
+            <div class="temp">
+                <img src="{% static 'images/temperature.png' %}" alt="temperature">
+                <br>
+                <p>Temperature:{{temperature}}</p>
+            </div>
+            <div class="humi">
+                <img src="{% static 'images/humidity.png' %}" alt="humidity">
+                <br>
+                <p>HUMIDITY:{{humidity}}</p>
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/profile.png' %}" alt="profile">
+                <p>ID: AZ1987DSR <br> Installation date: 29/04/2022 <br> Next Maintenance: 23/05/2023</p>
+            </div>
+            <div class="image">
+                <p>Username:{{username}}</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="search">
+            <form action="{% url 'predict' %}" method="POST">
+                {% csrf_token %}
+
+
+                <input type="text" name="rainfall" id="Rainfall" placeholder="Rainfall" class="raninfall region">
+
+                <input type="number" id="pH" placeholder="pH" class="pH region" name="pH" min="0" max="14">
+
+                <input type="text" id="Nitrogen" placeholder="Nitrogen Content" class="n region" name="Nitrogen">
+
+                <input type="text" id="Phosphorous" placeholder="Phosphorous Content" class="p region"
+                    name="Phosphorous">
+
+                <input type="text" id="Potassium" placeholder="Potassium Content" class="k region" name="Potassium">
+
+
+                <button class="button" id="find" type="submit">
+                    <img src="{% static 'images/search.png' %}" alt="search">
+                </button>
+            </form>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Temperature</th>
+                        <th>Humidity</th>
+                        <th>Rainfall</th>
+                        <th>Nitrogen</th>
+                        <th>Phosphorus</th>
+                        <th>Potassium</th>
+                        <th>pH</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reading in readings %}
+                    <tr>
+                        <td>{{ reading.temperature }}</td>
+                        <td>{{ reading.humidity }}</td>
+                        <td>{{ reading.rainfall }}</td>
+                        <td>{{ reading.Nitrogen }}</td>
+                        <td>{{ reading.Phosphorus }}</td>
+                        <td>{{ reading.Potassium }}</td>
+                        <td>{{ reading.ph }}</td>
+                        <td>{{ reading.result }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+    <h1> Prediction : {{ result }}</h1>
+
+    <a href="{% url 'user' %}">
+        <button class="back"> <img src="{% static 'images/back.png' %}"> BACK
+        </button>
+    </a>
+
+
+
+    <script src="{% static 'js/time.js' %}"></script>
+</body>
+
+</html>

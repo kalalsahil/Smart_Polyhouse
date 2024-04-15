@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/control.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Control</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="dt">
+                <img src="{% static 'images/date and time.png' %}" alt="date and time">
+                <br>
+                <h3><span id="time"> </span> <br> <span id="date"> </span></h3>
+            </div>
+            <div class="temp">
+                <img src="{% static 'images/temperature.png' %}" alt="temperature">
+                <p>Temperature:{{temperature}}</p>
+            </div>
+            <div class="humi">
+                <img src="{% static 'images/humidity.png' %}" alt="humidity">
+                <p>HUMIDITY:{{humidity}}</p>
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/profile.png' %}" alt="profile">
+                <p>ID: AZ1987DSR <br> Installation date: 29/04/2022 <br> Next Maintenance: 23/05/2023</p>
+            </div>
+            <div class="image">
+                <p>Username:{{username}}</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="control">
+
+            <div class="open block">
+                <button id="myButtonopen">OPEN</button>
+            </div>
+
+            <div class="close block">
+                <button id="myButtonclose">CLOSE</button>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <p id="status">
+                status of the shed whether open or close
+            </p>
+        </div>
+
+
+    </main>
+
+
+    <script src="{% static 'js/time.js' %}"></script>
+    <script>$(document).ready(function () {
+            $("#myButtonopen").click(function () {
+                document.getElementById('status').innerHTML = "Open"
+                $.ajax({
+                    url: "http://192.168.227.242/Open",
+                    method: "GET",
+                    success: function (response) {
+                        console.log("GET request sent successfully.");
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error sending GET request: " + error);
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#myButtonclose").click(function () {
+                document.getElementById('status').innerHTML = "Closed"
+                $.ajax({
+                    url: "http://192.168.227.242/Close",
+                    method: "GET",
+                    success: function (response) {
+                        console.log("GET request sent successfully.");
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error sending GET request: " + error);
+                    }
+                });
+            });
+        });</script>
+</body>
+
+</html>

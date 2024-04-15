@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/crop.css' %}">
+    <title>Crops Information</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="dt">
+                <img src="{% static 'images/date and time.png' %}" alt="date and time">
+                <br>
+                <p><span id="time"> </span> <br> <span id="date"> </span></p>
+            </div>
+            <div class="temp">
+                <img src="{% static 'images/temperature.png' %}" alt="temperature">
+                <br>
+                <p>Temperature:{{temperature}}</p>
+            </div>
+            <div class="humi">
+                <img src="{% static 'images/humidity.png' %}" alt="humidity">
+                <br>
+                <p>HUMIDITY:{{humidity}}</p>
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/profile.png' %}" alt="profile">
+                <p>ID: AZ1987DSR <br> Installation date: 29/04/2022 <br> Next Maintenance: 23/05/2023</p>
+            </div>
+            <div class="image">
+                <p>Username:{{username}}</p>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <main>
+        <p class="title">Planted Crops Inside Polyhouse</p>
+        <!-- <br> -->
+        <div class="container">
+            <div class="crop">
+                <h3>Cabbage</h3>
+                <div class="right">
+                    <a href="{% url 'crop1' %}">
+                        <button>
+                            <img src="{% static 'images/forward.png' %}" alt="arrow">
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="crop">
+                <h3>Capsicum</h3>
+                <div class="right">
+                    <button onclick="window.location.href='cropInfo2.html';">
+                        <img src="{% static 'images/forward.png' %}" alt="arrow">
+                    </button>
+                </div>
+            </div>
+            <div class="crop">
+                <h3>Spinach</h3>
+                <div class="right">
+                    <button onclick="window.location.href='cropInfo3.html';">
+                        <img src="{% static 'images/forward.png' %}" alt="arrow">
+                    </button>
+                </div>
+            </div>
+            <div class="crop">
+                <h3>Tomato</h3>
+                <div class="right">
+                    <button onclick="window.location.href='cropInfo4.html';">
+                        <img src="{% static 'images/forward.png' %}" alt="arrow">
+                    </button>
+                </div>
+            </div>
+            <div class="crop">
+                <h3>Cauliflower</h3>
+                <div class="right">
+                    <button onclick="window.location.href='cropInfo5.html';">
+                        <img src="{% static 'images/forward.png' %}" alt="arrow">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="{% static 'js/time.js' %}">
+
+    </script>
+</body>
+
+</html>

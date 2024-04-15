@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/cropInfo.css">
+    <title>Information</title>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <div class="dt">
+                <img src="../Assets/date and time.png" alt="date and time">
+                <br>
+                <p><span id="time"> </span> <br> <span id="date"> </span></p>
+            </div>
+            <div class="temp">
+                <img src="../Assets/temperature.png" alt="temperature">
+                <br>
+                <p>temperature</p>
+            </div>
+            <div class="humi">
+                <img src="../Assets/humidity.png" alt="humidity">
+                <br>
+                <p>humidity</p>
+            </div>
+            <div class="profile">
+                <img src="../Assets/profile.png" alt="profile">
+                <p>ID: AZ1987DSR <br> Installation date: 29/04/2022 <br> Next Maintenance: 23/05/2023</p>
+            </div>
+            <div class="image">
+                image
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <div class="img">
+                <img src="../Assets/spinach.jpg" alt="crop" width="300" height="300">
+            </div>
+            <table>
+                <tr>
+                    <th>Crop:</th>
+                    <td>Spinach</td>
+                </tr>
+                </tr>
+                <tr>
+                    <th>Planted date:</th>
+                    <td>20/04/2023</td>
+
+
+                </tr>
+                <tr>
+                    <th>Predictive Maturing date:</th>
+                    <td>20/05/2023</td>
+
+
+                </tr>
+                <tr>
+                    <th>Days required to Mature:</th>
+                    <td>30-45 days</td>
+                </tr>
+
+                </tr>
+                <tr>
+                    <th>Todays's Day:</th>
+                    <td id="Todaydate"></td>
+
+                </tr>
+
+            </table>
+        </div>
+    </main>
+
+    <br>
+
+
+    <script src="../JS/time.js"></script>
+    <script src="../JS/date.js"></script>
+</body>
+
+</html>

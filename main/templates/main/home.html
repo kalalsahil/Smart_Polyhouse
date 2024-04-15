@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="nav">
+            <nav>
+
+                <a href="#intro">Home</a>
+
+                <a href="#intro">Importance</a>
+
+                <a href="#crops">Crops</a>
+
+                <a href="#structure">Structure</a>
+
+                <a href="#benefits">Benefits</a>
+
+                <a href="#footer">About</a>
+
+                <a href="{% url 'login_user' %}" class="alignLeft">Login</a>
+
+            </nav>
+        </div>
+
+        <div class="intro" id="intro">
+            <div class="para">
+                <img src="{% static 'images/content.png' %}" alt="content" height="500" width="400">
+            </div>
+
+            <div class="content ">
+                <p>"Polyhouses are not just structures, they are a way of life for modern farmers."</p>
+            </div>
+        </div>
+
+        <div id="crops">
+            <section class="crops">
+                <div class="img crop">
+                </div>
+                <div class="info">
+                    <p>The polyhouse structure allows farmers to cultivate a wide variety of crops with enhanced growth
+                        and yield. It provides an ideal growing environment for vegetables such as Cabbage, Bitter
+                        Gourd, Capsicum, Radish, Cauliflower, Chili, Coriander, Onion, Spinach, and Tomato, as well as
+                        flowers like Carnation, Gerbera, Marigold, Orchid, and Rose. With this technology, farmers can
+                        easily manage and regulate the polyhouse without manual intervention..</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="structure">
+            <section class="structure">
+                <div class="img struct">
+                </div>
+                <div class="info">
+                    <p>The polyhouse structure is equipped with advanced IoT-based technology to improve farming and
+                        irrigation. Its bio-shed can be regulated based on various factors such as temperature and
+                        rainfall. If harsh weather conditions such as heavy rainfall or high temperatures are detected,
+                        the shed can be automatically closed or closed manually using a button to protect the crops.
+                        Overall, the application of this technology can significantly increase productivity and minimize
+                        the risk of crop damage</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="benefits">
+            <section class="benefits">
+                <div class="img bene">
+                </div>
+                <div class="info">
+                    <p>The polyhouse structure is an advantageous tool for farmers as it enables the cultivation of
+                        diverse crop varieties, irrespective of seasonal or adverse conditions. This technology
+                        eliminates the need for manual intervention by farmers in the field, allowing for convenient and
+                        efficient management of their crops. With the help of a website, farmers can easily regulate and
+                        monitor the polyhouse, ensuring optimal growth conditions for their crops</p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer">
+            <div class="about block">
+                About: <br><br>This is the Project for the our 4th Sem. which has hand on practice to the new and
+                helpful technology.
+            </div>
+            <div class="handles block">
+                For more updates follow us on the social media handles:
+                <br><br><br>
+                <img src="{% static 'images/instagram.png' %}" alt="instagram">
+                <!-- <br> -->
+                <img src="{% static 'images/facebook.png' %}" alt="facebook">
+                <!-- <br> -->
+                <img src="{% static 'images/linkden.png' %}" alt="linkden">
+            </div>
+            <div class="projects block">
+                Our Upcoming Projects would be towards the modern technology for the betterment of the Mankind and the
+                Society.
+            </div>
+    </footer>
+
+    <script src="{% static 'js/time.js' %}"></script>
+</body>
+
+</html>

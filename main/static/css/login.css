@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    background-image: url(../Assets/loginbackground.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.div{
+    margin-right: 25%;
+    margin-left: 28%;
+    margin-bottom: 3%;
+    width: 600px;
+    height: 550px;
+    background-color: #2f2fa257;
+    border-radius: 25px;
+}
+
+.div .head{
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 44px;
+    text-align: center;
+    color: white;
+}
+
+form{
+    margin: 20%;
+    font-size: 25px;
+    color: white;
+}
+
+input{
+    width: 290px;
+    height: 25px;
+    padding: 3px;
+}
+
+form .checkbox{
+    font-size: 18px;
+    align-items: left;   
+}
+
+form button{
+    margin-left: 10%;
+}
+
+form button:hover{
+    background-color: antiquewhite;
+    font-weight: bold;
+}
+
+.imp{
+    color: red;
+}
+span{
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.button{
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+.button:hover{
+    background-color: rgb(255, 241, 252);
+}

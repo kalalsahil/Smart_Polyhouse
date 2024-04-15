@@ -5,9 +5,10 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 import requests
 from . import models
-
-
-with open('D:\Clg\EDI\RandomForest.pkl' , 'rb') as f:
+import os
+path=os.getcwd()
+print(os.getcwd())
+with open(path+'/RandomForest.pkl' , 'rb') as f:
     lr = pickle.load(f)
 
 # Create your views here.
